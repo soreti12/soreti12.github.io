@@ -43,11 +43,22 @@
             color: black;
         }
         #newParagraph {
-            margin: auto;
             margin-top: 35px;
             height: 30%;
             width: 75%;
             background-color: #F1F1F1;
+        }
+        table {
+            width: 100%;
+            height: 50%;
+        }
+       th {
+           width: 50%;
+       }
+        td {
+            text-align: center;
+            width: 100&;
+            height: 50%;
         }
     </style>
 </head>
@@ -58,54 +69,93 @@
         <button id='Paper'>Paper</button>
         <button id='Scissors'>Scissors</button>
     </div>
+    
     <div id='newParagraph'>
-        <p id='par'></p>
+            <table>
+                <tr>
+                    <th>Player</th>
+                    <th>Computer</th>
+                </tr>
+                <!-- This is where I will display user and computer input -->
+                <tr id='tableRows'>
+                    <td id='playerInput'></td>
+                    <td id='computerInput'></td>
+                </tr>
+            </table>
     </div>
+    <p id='par'></p>
 
     <script>
         const buttons = document.querySelectorAll('button');
 
+        //I defined 'div' and 'para' to be used within the button event listener below
         const div = document.getElementById('newParagraph');
-
         const para = document.getElementById('par');
-        
 
+        //'tableRow' is the parent node, playerText and computerText
+        //will append to the parent node in the 'playRound' function!
+        const tableRow = document.getElementById('tableRows')
+        const playerText = document.getElementById('playerInput');
+        const computerText = document.getElementById('computerInput');
+        
+        //computer randomly picks an item in 'compArr' to play 
         let compArr = ['Rock', 'Paper', 'Scissors']
         function computerPlay() {
             let round = compArr[Math.floor(Math.random()*compArr.length)];
             return round;
         }
 
+        //the funtion goes through a conditional and appends 
+        //their respective content to parent node 'tableRow'
         function playRound(input, computerSelection) {
             console.log(input)
             console.log(computerSelection)
             if (input === 'Rock' && computerSelection === 'Paper') {
-                 output = `${computerSelection} beats ${input}!`
-                 return output
+                playerText.textContent = `${input}`
+                computerText.textContent = `${computerSelection}`
+                tableRow.appendChild(playerText);
+                tableRow.appendChild(computerText);
             } else if (input === 'Rock' && computerSelection === 'Scissors') {
-                 output = `${input} beats ${computerSelection}!`
-                 return output
+                playerText.textContent = `${input}`
+                computerText.textContent = `${computerSelection}`
+                tableRow.appendChild(playerText);
+                tableRow.appendChild(computerText);
             } else if (input === 'Paper' && computerSelection === 'Scissors') {
-                 output = `${computerSelection} beats ${input}!`
-                 return output
+                playerText.textContent = `${input}`
+                computerText.textContent = `${computerSelection}`
+                tableRow.appendChild(playerText);
+                tableRow.appendChild(computerText);
             } else if (input === 'Paper' && computerSelection === 'Rock') {
-                 output = `${input} beats ${computerSelection}!`
-                 return output
+                playerText.textContent = `${input}`
+                computerText.textContent = `${computerSelection}`
+                tableRow.appendChild(playerText);
+                tableRow.appendChild(computerText);
             } else if (input === 'Scissors' && computerSelection === 'Rock') {
-                  output =`${computerSelection} beats ${input}!`
-                  return output
+                playerText.textContent = `${input}`
+                computerText.textContent = `${computerSelection}`
+                tableRow.appendChild(playerText);
+                tableRow.appendChild(computerText);
             } else if (input === 'Scissors' && computerSelection === 'Paper') {
-                  output =`${input} beats ${computerSelection}!`
-                  return output
+                playerText.textContent = `${input}`
+                computerText.textContent = `${computerSelection}`
+                tableRow.appendChild(playerText);
+                tableRow.appendChild(computerText);
             } else {
-                 output = 'It\'s a tie!'
-                 return output
+                playerText.textContent = `${input}`
+                computerText.textContent = `${computerSelection}`
+                tableRow.appendChild(playerText);
+                tableRow.appendChild(computerText);
             }
         }
+
+        //button event listener
         buttons.forEach((button => {
             button.addEventListener('click', () => {
+                //I've defined 'computerSelection' and 'input' to be 
+                //used in the 'playRound' function
                 const computerSelection = computerPlay();
                 const input = button.id;
+                //Append output of 'playRound' to its parent node
                 para.textContent = playRound(input, computerSelection)
                 div.appendChild(para);
             })

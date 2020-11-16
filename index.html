@@ -104,32 +104,35 @@
             let round = compArr[Math.floor(Math.random()*compArr.length)];
             return round;
         }
-
+        let ruth = 'Ruth'
         //the funtion goes through a conditional and appends 
         //their respective content to parent node 'tableRow'
         function playRound(input, computerSelection) {
             console.log(input)
             console.log(computerSelection)
             if (input === 'Rock' && computerSelection === 'Paper') {
-                playerText.textContent = `${input}`
-                computerText.textContent = `${computerSelection}`
-                tableRow.appendChild(playerText);
-                tableRow.appendChild(computerText);
+                // playerText.textContent = `${input}`
+                // computerText.textContent = `${computerSelection}`
+                // tableRow.appendChild(playerText);
+                // tableRow.appendChild(computerText);
+                return ruth
             } else if (input === 'Rock' && computerSelection === 'Scissors') {
-                playerText.textContent = `${input}`
-                computerText.textContent = `${computerSelection}`
-                tableRow.appendChild(playerText);
-                tableRow.appendChild(computerText);
+                // playerText.textContent = `${input}`
+                // computerText.textContent = `${computerSelection}`
+                // tableRow.appendChild(playerText);
+                // tableRow.appendChild(computerText);
+                return ruth
             } else if (input === 'Paper' && computerSelection === 'Scissors') {
                 playerText.textContent = `${input}`
                 computerText.textContent = `${computerSelection}`
                 tableRow.appendChild(playerText);
                 tableRow.appendChild(computerText);
             } else if (input === 'Paper' && computerSelection === 'Rock') {
-                playerText.textContent = `${input}`
-                computerText.textContent = `${computerSelection}`
-                tableRow.appendChild(playerText);
-                tableRow.appendChild(computerText);
+                // playerText.textContent = `${input}`
+                // computerText.textContent = `${computerSelection}`
+                // tableRow.appendChild(playerText);
+                // tableRow.appendChild(computerText);
+                return ruth
             } else if (input === 'Scissors' && computerSelection === 'Rock') {
                 playerText.textContent = `${input}`
                 computerText.textContent = `${computerSelection}`
@@ -141,10 +144,11 @@
                 tableRow.appendChild(playerText);
                 tableRow.appendChild(computerText);
             } else {
-                playerText.textContent = `${input}`
-                computerText.textContent = `${computerSelection}`
-                tableRow.appendChild(playerText);
-                tableRow.appendChild(computerText);
+                // playerText.textContent = `${input}`
+                // computerText.textContent = `${computerSelection}`
+                // tableRow.appendChild(playerText);
+                // tableRow.appendChild(computerText);
+                return ruth
             }
         }
 

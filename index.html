@@ -99,7 +99,7 @@
         const computerText = document.getElementById('computerInput');
         
         //computer randomly picks an item in 'compArr' to play 
-        let compArr = ['Ruth', 'Noor', 'Rock']
+        let compArr = ['Rock', 'Paper', 'Rock']
         function computerPlay() {
             let round = compArr[Math.floor(Math.random()*compArr.length)];
             return round;
@@ -110,32 +110,32 @@
         function playRound(input, computerSelection) {
             console.log(input)
             console.log(computerSelection)
-            if (input === 'Rock' && computerSelection === 'Noor') {
+            if (input === 'Rock' && computerSelection === 'Paper') {
                 playerText.textContent = `${input}`
                 computerText.textContent = `${computerSelection}`
                 tableRow.appendChild(playerText);
                 tableRow.appendChild(computerText);
-            } else if (input === 'Rock' && computerSelection === 'Ruth') {
+            } else if (input === 'Rock' && computerSelection === 'Scissors') {
                 playerText.textContent = `${input}`
                 computerText.textContent = `${computerSelection}`
                 tableRow.appendChild(playerText);
                 tableRow.appendChild(computerText);
-            } else if (input === 'Paper' && computerSelection === 'Ruth') {
+            } else if (input === 'Paper' && computerSelection === 'Rock') {
                 playerText.textContent = `${input}`
                 computerText.textContent = `${computerSelection}`
                 tableRow.appendChild(playerText);
                 tableRow.appendChild(computerText);
-            } else if (input === 'Paper' && computerSelection === 'Noor') {
+            } else if (input === 'Paper' && computerSelection === 'Scissors') {
                 playerText.textContent = `${input}`
                 computerText.textContent = `${computerSelection}`
                 tableRow.appendChild(playerText);
                 tableRow.appendChild(computerText);
-            } else if (input === 'Scissors' && computerSelection === 'Ruth') {
+            } else if (input === 'Scissors' && computerSelection === 'Rock') {
                 playerText.textContent = `${input}`
                 computerText.textContent = `${computerSelection}`
                 tableRow.appendChild(playerText);
                 tableRow.appendChild(computerText);
-            } else if (input === 'Scissors' && computerSelection === 'Noor') {
+            } else if (input === 'Scissors' && computerSelection === 'Paper') {
                 playerText.textContent = `${input}`
                 computerText.textContent = `${computerSelection}`
                 tableRow.appendChild(playerText);

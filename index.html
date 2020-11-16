@@ -99,7 +99,7 @@
         const computerText = document.getElementById('computerInput');
         
         //computer randomly picks an item in 'compArr' to play 
-        let compArr = ['Rock', 'Paper', 'Scissors']
+        let compArr = ['Ruth', 'Noor', 'Noor']
         function computerPlay() {
             let round = compArr[Math.floor(Math.random()*compArr.length)];
             return round;
@@ -110,32 +110,32 @@
         function playRound(input, computerSelection) {
             console.log(input)
             console.log(computerSelection)
-            if (input === 'Rock' && computerSelection === 'Paper') {
+            if (input === 'Rock' && computerSelection === 'Noor') {
                 playerText.textContent = `${input}`
                 computerText.textContent = `${computerSelection}`
                 tableRow.appendChild(playerText);
                 tableRow.appendChild(computerText);
-            } else if (input === 'Rock' && computerSelection === 'Scissors') {
+            } else if (input === 'Rock' && computerSelection === 'Ruth') {
                 playerText.textContent = `${input}`
                 computerText.textContent = `${computerSelection}`
                 tableRow.appendChild(playerText);
                 tableRow.appendChild(computerText);
-            } else if (input === 'Paper' && computerSelection === 'Scissors') {
+            } else if (input === 'Paper' && computerSelection === 'Ruth') {
                 playerText.textContent = `${input}`
                 computerText.textContent = `${computerSelection}`
                 tableRow.appendChild(playerText);
                 tableRow.appendChild(computerText);
-            } else if (input === 'Paper' && computerSelection === 'Rock') {
+            } else if (input === 'Paper' && computerSelection === 'Noor') {
                 playerText.textContent = `${input}`
                 computerText.textContent = `${computerSelection}`
                 tableRow.appendChild(playerText);
                 tableRow.appendChild(computerText);
-            } else if (input === 'Scissors' && computerSelection === 'Rock') {
+            } else if (input === 'Scissors' && computerSelection === 'Ruth') {
                 playerText.textContent = `${input}`
                 computerText.textContent = `${computerSelection}`
                 tableRow.appendChild(playerText);
                 tableRow.appendChild(computerText);
-            } else if (input === 'Scissors' && computerSelection === 'Paper') {
+            } else if (input === 'Scissors' && computerSelection === 'Noor') {
                 playerText.textContent = `${input}`
                 computerText.textContent = `${computerSelection}`
                 tableRow.appendChild(playerText);
@@ -153,8 +153,8 @@
             button.addEventListener('click', () => {
                 //I've defined 'computerSelection' and 'input' to be 
                 //used in the 'playRound' function
-                const computerSelection = 'Ruth';
-                const input = 'Ruth';
+                const computerSelection = computerPlay();
+                const input = button.id;
                 //Append output of 'playRound' to its parent
                 para.textContent = playRound(input, computerSelection)
                 div.appendChild(para);
